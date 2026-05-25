@@ -61,16 +61,47 @@
         
         .dropdown-item:hover { background-color: #eff6ff; color: #1e3a8a; }
         
-        /* Gaya dekorasi untuk kategori di dalam Pop-up */
         .modal-category-header {
-            font-size: 0.85rem;
+            font-size: 0.9rem;
             text-transform: uppercase;
             letter-spacing: 0.5px;
             color: #4b5563;
             background-color: #f3f4f6;
-            padding: 6px 12px;
+            padding: 8px 12px;
             border-radius: 6px;
             font-weight: 700;
+            margin-bottom: 15px;
+        }
+
+        /* Latar belakang papan catur untuk pratinjau logo di dalam modal */
+        .bg-checker {
+            background-image: 
+                linear-gradient(45deg, #e5e5e5 25%, transparent 25%, transparent 75%, #e5e5e5 75%, #e5e5e5),
+                linear-gradient(45deg, #e5e5e5 25%, transparent 25%, transparent 75%, #e5e5e5 75%, #e5e5e5);
+            background-size: 14px 14px;
+            background-position: 0 0, 7px 7px;
+            background-color: #ffffff;
+            border-top-left-radius: 8px;
+            border-top-right-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 90px; /* Tinggi thumbnail proporsional */
+            padding: 10px;
+        }
+        
+        /* Modifikasi untuk mini-card di dalam modal agar tidak bergeser saat dihover */
+        .modal-body .card {
+            border-radius: 8px;
+            border: 1px solid #e5e7eb;
+            height: 100%;
+            transition: none;
+        }
+        .modal-body .card:hover {
+            transform: none;
+            box-shadow: none;
+            border-top: 1px solid #e5e7eb;
+            border-color: #3b82f6;
         }
     </style>
 </head>
@@ -192,56 +223,119 @@
     </main>
 
     <div class="modal fade" id="downloadLogoModal" tabindex="-1" aria-labelledby="downloadLogoModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-md modal-dialog-centered modal-dialog-scrollable">
+        <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
             <div class="modal-content border-0 shadow">
-                <div class="modal-header bg-white border-bottom-0 pb-0">
-                    <h5 class="modal-title fw-bold" id="downloadLogoModalLabel"><i class="bi bi-images text-primary me-2"></i>Pilih Varian Logo</h5>
+                <div class="modal-header bg-white border-bottom-0 pb-0 pt-4 px-4">
+                    <h5 class="modal-title fw-bold" id="downloadLogoModalLabel"><i class="bi bi-images text-primary me-2"></i>Pilih & Pratinjau Logo</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <div class="modal-body py-4">
-                    <p class="text-muted small mb-4">Silakan pilih jenis format logo di bawah ini untuk mengunduh secara langsung ke perangkat Anda.</p>
+                
+                <div class="modal-body px-4 pb-4 bg-light">
                     
-                    <div class="modal-category-header mb-2">Varian Banner (Landscape)</div>
-                    <div class="list-group list-group-flush mb-4">
-                        <div class="list-group-item d-flex justify-content-between align-items-center px-2 py-3">
-                            <span class="small fw-semibold text-secondary">Banner (Colour)</span>
-                            <a href="images/logos/Logo TRE Banner (Colour).png" download class="btn btn-sm btn-primary px-3"><i class="bi bi-download"></i></a>
+                    <div class="modal-category-header mt-2">Varian Banner (Landscape)</div>
+                    <div class="row g-3 mb-4">
+                        <div class="col-6 col-md-3">
+                            <div class="card bg-white">
+                                <div class="bg-checker">
+                                    <img src="images/logos/Logo TRE Banner (colour).png" alt="Banner Colour" class="img-fluid" style="max-height: 100%;">
+                                </div>
+                                <div class="card-body p-2 text-center d-flex flex-column">
+                                    <span class="fw-semibold mb-2" style="font-size: 0.8rem;">Banner (Colour)</span>
+                                    <a href="images/logos/Logo TRE Banner (colour).png" download class="btn btn-sm btn-primary w-100 mt-auto"><i class="bi bi-download"></i></a>
+                                </div>
+                            </div>
                         </div>
-                        <div class="list-group-item d-flex justify-content-between align-items-center px-2 py-3">
-                            <span class="small fw-semibold text-secondary">Banner (Black)</span>
-                            <a href="images/logos/Logo TRE Banner (black).png" download class="btn btn-sm btn-primary px-3"><i class="bi bi-download"></i></a>
+                        <div class="col-6 col-md-3">
+                            <div class="card bg-white">
+                                <div class="bg-checker">
+                                    <img src="images/logos/Logo TRE Banner (black).png" alt="Banner Black" class="img-fluid" style="max-height: 100%;">
+                                </div>
+                                <div class="card-body p-2 text-center d-flex flex-column">
+                                    <span class="fw-semibold mb-2" style="font-size: 0.8rem;">Banner (Black)</span>
+                                    <a href="images/logos/Logo TRE Banner (black).png" download class="btn btn-sm btn-primary w-100 mt-auto"><i class="bi bi-download"></i></a>
+                                </div>
+                            </div>
                         </div>
-                        <div class="list-group-item d-flex justify-content-between align-items-center px-2 py-3">
-                            <span class="small fw-semibold text-secondary">Banner (White)</span>
-                            <a href="images/logos/Logo TRE Banner (white).png" download class="btn btn-sm btn-primary px-3"><i class="bi bi-download"></i></a>
+                        <div class="col-6 col-md-3">
+                            <div class="card bg-white">
+                                <div class="bg-checker">
+                                    <img src="images/logos/Logo TRE Banner (white).png" alt="Banner White" class="img-fluid" style="max-height: 100%;">
+                                </div>
+                                <div class="card-body p-2 text-center d-flex flex-column">
+                                    <span class="fw-semibold mb-2" style="font-size: 0.8rem;">Banner (White)</span>
+                                    <a href="images/logos/Logo TRE Banner (white).png" download class="btn btn-sm btn-primary w-100 mt-auto"><i class="bi bi-download"></i></a>
+                                </div>
+                            </div>
                         </div>
-                        <div class="list-group-item d-flex justify-content-between align-items-center px-2 py-3">
-                            <span class="small fw-semibold text-secondary">Banner (Form)</span>
-                            <a href="images/logos/Logo TRE Banner (form).png" download class="btn btn-sm btn-primary px-3"><i class="bi bi-download"></i></a>
+                        <div class="col-6 col-md-3">
+                            <div class="card bg-white">
+                                <div class="bg-checker">
+                                    <img src="images/logos/Logo TRE Banner (form).png" alt="Banner Form" class="img-fluid" style="max-height: 100%;">
+                                </div>
+                                <div class="card-body p-2 text-center d-flex flex-column">
+                                    <span class="fw-semibold mb-2" style="font-size: 0.8rem;">Banner (Form)</span>
+                                    <a href="images/logos/Logo TRE Banner (form).png" download class="btn btn-sm btn-primary w-100 mt-auto"><i class="bi bi-download"></i></a>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     
-                    <div class="modal-category-header mb-2">Varian Standar (Square/Box)</div>
-                    <div class="list-group list-group-flush">
-                        <div class="list-group-item d-flex justify-content-between align-items-center px-2 py-3">
-                            <span class="small fw-semibold text-secondary">Standar (Colour)</span>
-                            <a href="images/logos/LogoTRE (colour).png" download class="btn btn-sm btn-primary px-3"><i class="bi bi-download"></i></a>
+                    <div class="modal-category-header">Varian Standar (Square/Box)</div>
+                    <div class="row g-3">
+                        <div class="col-6 col-md-4">
+                            <div class="card bg-white">
+                                <div class="bg-checker">
+                                    <img src="images/logos/LogoTRE (colour).png" alt="Standar Colour" class="img-fluid" style="max-height: 100%;">
+                                </div>
+                                <div class="card-body p-2 text-center d-flex flex-column">
+                                    <span class="fw-semibold mb-2" style="font-size: 0.8rem;">Standar (Colour)</span>
+                                    <a href="images/logos/LogoTRE (colour).png" download class="btn btn-sm btn-primary w-100 mt-auto"><i class="bi bi-download"></i></a>
+                                </div>
+                            </div>
                         </div>
-                        <div class="list-group-item d-flex justify-content-between align-items-center px-2 py-3">
-                            <span class="small fw-semibold text-secondary">Standar (Black)</span>
-                            <a href="images/logos/LogoTRE (black).png" download class="btn btn-sm btn-primary px-3"><i class="bi bi-download"></i></a>
+                        <div class="col-6 col-md-4">
+                            <div class="card bg-white">
+                                <div class="bg-checker">
+                                    <img src="images/logos/LogoTRE (black).png" alt="Standar Black" class="img-fluid" style="max-height: 100%;">
+                                </div>
+                                <div class="card-body p-2 text-center d-flex flex-column">
+                                    <span class="fw-semibold mb-2" style="font-size: 0.8rem;">Standar (Black)</span>
+                                    <a href="images/logos/LogoTRE (black).png" download class="btn btn-sm btn-primary w-100 mt-auto"><i class="bi bi-download"></i></a>
+                                </div>
+                            </div>
                         </div>
-                        <div class="list-group-item d-flex justify-content-between align-items-center px-2 py-3">
-                            <span class="small fw-semibold text-secondary">Standar (White)</span>
-                            <a href="images/logos/LogoTRE (white).png" download class="btn btn-sm btn-primary px-3"><i class="bi bi-download"></i></a>
+                        <div class="col-6 col-md-4">
+                            <div class="card bg-white">
+                                <div class="bg-checker">
+                                    <img src="images/logos/LogoTRE (white).png" alt="Standar White" class="img-fluid" style="max-height: 100%;">
+                                </div>
+                                <div class="card-body p-2 text-center d-flex flex-column">
+                                    <span class="fw-semibold mb-2" style="font-size: 0.8rem;">Standar (White)</span>
+                                    <a href="images/logos/LogoTRE (white).png" download class="btn btn-sm btn-primary w-100 mt-auto"><i class="bi bi-download"></i></a>
+                                </div>
+                            </div>
                         </div>
-                        <div class="list-group-item d-flex justify-content-between align-items-center px-2 py-3">
-                            <span class="small fw-semibold text-secondary">Standar (Black + Nama)</span>
-                            <a href="images/logos/LogoTRE (black with name).png" download class="btn btn-sm btn-primary px-3"><i class="bi bi-download"></i></a>
+                        <div class="col-6 col-md-6">
+                            <div class="card bg-white">
+                                <div class="bg-checker">
+                                    <img src="images/logos/LogoTRE (black with name).png" alt="Standar Black Name" class="img-fluid" style="max-height: 100%;">
+                                </div>
+                                <div class="card-body p-2 text-center d-flex flex-column">
+                                    <span class="fw-semibold mb-2" style="font-size: 0.8rem;">Standar (Black + Nama)</span>
+                                    <a href="images/logos/LogoTRE (black with name).png" download class="btn btn-sm btn-primary w-100 mt-auto"><i class="bi bi-download"></i></a>
+                                </div>
+                            </div>
                         </div>
-                        <div class="list-group-item d-flex justify-content-between align-items-center px-2 py-3">
-                            <span class="small fw-semibold text-secondary">Standar (White + Nama)</span>
-                            <a href="images/logos/LogoTRE (white with name).png" download class="btn btn-sm btn-primary px-3"><i class="bi bi-download"></i></a>
+                        <div class="col-6 col-md-6">
+                            <div class="card bg-white">
+                                <div class="bg-checker">
+                                    <img src="images/logos/LogoTRE (white with name).png" alt="Standar White Name" class="img-fluid" style="max-height: 100%;">
+                                </div>
+                                <div class="card-body p-2 text-center d-flex flex-column">
+                                    <span class="fw-semibold mb-2" style="font-size: 0.8rem;">Standar (White + Nama)</span>
+                                    <a href="images/logos/LogoTRE (white with name).png" download class="btn btn-sm btn-primary w-100 mt-auto"><i class="bi bi-download"></i></a>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
