@@ -59,20 +59,18 @@
         }
         .btn-kembali:hover { text-decoration: underline; }
         
-        /* PERBAIKAN: Ditambahkan z-index agar tidak tertutup kotak di bawahnya */
-        .dropdown-menu { 
-            z-index: 1050 !important; 
-        }
-        .dropdown-item:hover { 
-            background-color: #eff6ff; 
-            color: #1e3a8a; 
-        }
-        .dropdown-header {
+        .dropdown-item:hover { background-color: #eff6ff; color: #1e3a8a; }
+        
+        /* Gaya dekorasi untuk kategori di dalam Pop-up */
+        .modal-category-header {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: #4b5563;
+            background-color: #f3f4f6;
+            padding: 6px 12px;
+            border-radius: 6px;
             font-weight: 700;
-            color: #1e3a8a;
-            background-color: #f1f5f9;
-            margin-top: 4px;
-            margin-bottom: 4px;
         }
     </style>
 </head>
@@ -123,36 +121,17 @@
                     <div class="card-body p-2 d-flex flex-column">
                         <div class="icon-circle"><i class="bi bi-image text-primary fs-4"></i></div>
                         <h4 class="fw-bold h5 mb-2">Kumpulan Logo Resmi (.PNG)</h4>
-                        <p class="text-muted small">Akses berkas identitas visual prodi. Tersedia dokumen PDF brief arti lambang serta opsi unduhan langsung untuk berbagai jenis varian warna logo.</p>
+                        <p class="text-muted small">Akses berkas identitas visual prodi. Tersedia dokumen PDF brief arti lambang serta panel pop-up terstruktur untuk mengunduh berbagai jenis varian warna logo.</p>
                         
                         <div class="mt-auto d-flex gap-2">
                             <a href="#" target="_blank" class="btn btn-outline-primary btn-sm w-50 py-2">
                                 <i class="bi bi-file-earmark-pdf me-1"></i> Brief Makna Logo
                             </a>
                             
-                            <div class="dropdown w-50">
-                                <button class="btn btn-primary btn-sm dropdown-toggle w-100 py-2" type="button" id="dropdownDownloadLogo" data-bs-toggle="dropdown" aria-expanded="false">
-                                    <i class="bi bi-download me-1"></i> Pilih & Unduh
-                                </button>
-                                <ul class="dropdown-menu dropdown-menu-end shadow border-0" aria-labelledby="dropdownDownloadLogo">
-                                    <li><h6 class="dropdown-header">Varian Banner (Landscape)</h6></li>
-                                    <li><a class="dropdown-item py-2 small" href="images/logos/Logo TRE Banner (colour).png" download>Banner (Colour)</a></li>
-                                    <li><a class="dropdown-item py-2 small" href="images/logos/Logo TRE Banner (black).png" download>Banner (Black)</a></li>
-                                    <li><a class="dropdown-item py-2 small" href="images/logos/Logo TRE Banner (white).png" download>Banner (White)</a></li>
-                                    <li><a class="dropdown-item py-2 small" href="images/logos/Logo TRE Banner (form).png" download>Banner (Form)</a></li>
-                                    
-                                    <li><hr class="dropdown-divider"></li>
-                                    
-                                    <li><h6 class="dropdown-header">Varian Standar (Square/Box)</h6></li>
-                                    <li><a class="dropdown-item py-2 small" href="images/logos/LogoTRE (colour).png" download>Standar (Colour)</a></li>
-                                    <li><a class="dropdown-item py-2 small" href="images/logos/LogoTRE (black).png" download>Standar (Black)</a></li>
-                                    <li><a class="dropdown-item py-2 small" href="images/logos/LogoTRE (white).png" download>Standar (White)</a></li>
-                                    <li><a class="dropdown-item py-2 small" href="images/logos/LogoTRE (black with name).png" download>Standar (Black + Nama)</a></li>
-                                    <li><a class="dropdown-item py-2 small" href="images/logos/LogoTRE (white with name).png" download>Standar (White + Nama)</a></li>
-                                </ul>
-                            </div>
+                            <button type="button" class="btn btn-primary btn-sm w-50 py-2" data-bs-toggle="modal" data-bs-target="#downloadLogoModal">
+                                <i class="bi bi-download me-1"></i> Pilih & Unduh Logo
+                            </button>
                         </div>
-
                     </div>
                 </div>
             </div>
@@ -192,7 +171,7 @@
                 <div class="card shadow-sm p-4">
                     <div class="card-body p-2 d-flex flex-column">
                         <div class="icon-circle"><i class="bi bi-file-earmark-easel text-primary fs-4"></i></div>
-                        <h4 class="fw-bold h5 mb-2">Template PPT</h4>
+                        <h4 class="fw-bold h5 mb-2">Template Presentasi (PPT)</h4>
                         <p class="text-muted small">Master slide PowerPoint resmi dengan skema warna dan tata letak khas institusi untuk presentasi akademik maupun umum.</p>
                         <a href="#" target="_blank" class="btn btn-outline-primary btn-sm mt-auto w-100 py-2"><i class="bi bi-box-arrow-up-right me-1"></i> Buka Folder PPT</a>
                     </div>
@@ -210,8 +189,65 @@
                 </div>
             </div>
         </div>
-
     </main>
+
+    <div class="modal fade" id="downloadLogoModal" tabindex="-1" aria-labelledby="downloadLogoModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-md modal-dialog-centered modal-dialog-scrollable">
+            <div class="modal-content border-0 shadow">
+                <div class="modal-header bg-white border-bottom-0 pb-0">
+                    <h5 class="modal-title fw-bold" id="downloadLogoModalLabel"><i class="bi bi-images text-primary me-2"></i>Pilih Varian Logo</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body py-4">
+                    <p class="text-muted small mb-4">Silakan pilih jenis format logo di bawah ini untuk mengunduh secara langsung ke perangkat Anda.</p>
+                    
+                    <div class="modal-category-header mb-2">Varian Banner (Landscape)</div>
+                    <div class="list-group list-group-flush mb-4">
+                        <div class="list-group-item d-flex justify-content-between align-items-center px-2 py-3">
+                            <span class="small fw-semibold text-secondary">Banner (Colour)</span>
+                            <a href="images/logos/Logo TRE Banner (colour).png" download class="btn btn-sm btn-primary px-3"><i class="bi bi-download"></i></a>
+                        </div>
+                        <div class="list-group-item d-flex justify-content-between align-items-center px-2 py-3">
+                            <span class="small fw-semibold text-secondary">Banner (Black)</span>
+                            <a href="images/logos/Logo TRE Banner (black).png" download class="btn btn-sm btn-primary px-3"><i class="bi bi-download"></i></a>
+                        </div>
+                        <div class="list-group-item d-flex justify-content-between align-items-center px-2 py-3">
+                            <span class="small fw-semibold text-secondary">Banner (White)</span>
+                            <a href="images/logos/Logo TRE Banner (white).png" download class="btn btn-sm btn-primary px-3"><i class="bi bi-download"></i></a>
+                        </div>
+                        <div class="list-group-item d-flex justify-content-between align-items-center px-2 py-3">
+                            <span class="small fw-semibold text-secondary">Banner (Form)</span>
+                            <a href="images/logos/Logo TRE Banner (form).png" download class="btn btn-sm btn-primary px-3"><i class="bi bi-download"></i></a>
+                        </div>
+                    </div>
+                    
+                    <div class="modal-category-header mb-2">Varian Standar (Square/Box)</div>
+                    <div class="list-group list-group-flush">
+                        <div class="list-group-item d-flex justify-content-between align-items-center px-2 py-3">
+                            <span class="small fw-semibold text-secondary">Standar (Colour)</span>
+                            <a href="images/logos/LogoTRE (colour).png" download class="btn btn-sm btn-primary px-3"><i class="bi bi-download"></i></a>
+                        </div>
+                        <div class="list-group-item d-flex justify-content-between align-items-center px-2 py-3">
+                            <span class="small fw-semibold text-secondary">Standar (Black)</span>
+                            <a href="images/logos/LogoTRE (black).png" download class="btn btn-sm btn-primary px-3"><i class="bi bi-download"></i></a>
+                        </div>
+                        <div class="list-group-item d-flex justify-content-between align-items-center px-2 py-3">
+                            <span class="small fw-semibold text-secondary">Standar (White)</span>
+                            <a href="images/logos/LogoTRE (white).png" download class="btn btn-sm btn-primary px-3"><i class="bi bi-download"></i></a>
+                        </div>
+                        <div class="list-group-item d-flex justify-content-between align-items-center px-2 py-3">
+                            <span class="small fw-semibold text-secondary">Standar (Black + Nama)</span>
+                            <a href="images/logos/LogoTRE (black with name).png" download class="btn btn-sm btn-primary px-3"><i class="bi bi-download"></i></a>
+                        </div>
+                        <div class="list-group-item d-flex justify-content-between align-items-center px-2 py-3">
+                            <span class="small fw-semibold text-secondary">Standar (White + Nama)</span>
+                            <a href="images/logos/LogoTRE (white with name).png" download class="btn btn-sm btn-primary px-3"><i class="bi bi-download"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <footer class="text-center py-5 text-muted border-top mt-5">
         <p>&copy; 2026 Teknologi Rekayasa Elektro - Dokumen Penunjang</p>
