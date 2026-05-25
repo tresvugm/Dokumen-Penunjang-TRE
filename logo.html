@@ -89,6 +89,7 @@
             </div>
         </div>
     </nav>
+
     <header class="hero-section text-center">
         <div class="container">
             <h1 class="display-4 fw-bold">Logo & Aset Media TRE</h1>
@@ -118,7 +119,16 @@
                         <div class="icon-circle"><i class="bi bi-film text-primary fs-4"></i></div>
                         <h4 class="fw-bold h5 mb-2">Video Intro & Bumper</h4>
                         <p class="text-muted small">Folder berisi template video intro/bumper resmi berdurasi pendek yang wajib digunakan untuk pembuka video kegiatan atau presentasi prodi.</p>
-                        <a href="#" target="_blank" class="btn btn-primary btn-sm mt-auto w-100"><i class="bi bi-folder-symlink me-1"></i> Akses Video Intro</a>
+                        
+                        <div class="mt-auto d-flex gap-2">
+                            <button type="button" class="btn btn-outline-primary btn-sm w-50" data-bs-toggle="modal" data-bs-target="#previewVideoModal">
+                                <i class="bi bi-eye me-1"></i> Preview
+                            </button>
+                            <a href="#" target="_blank" class="btn btn-primary btn-sm w-50">
+                                <i class="bi bi-folder-symlink me-1"></i> Akses Folder
+                            </a>
+                        </div>
+
                     </div>
                 </div>
             </div>
@@ -159,8 +169,24 @@
                 </div>
             </div>
         </div>
-
     </main>
+
+    <div class="modal fade" id="previewVideoModal" tabindex="-1" aria-labelledby="previewVideoModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header border-0 pb-0">
+                    <h5 class="modal-title fw-bold" id="previewVideoModalLabel">Preview Video Intro</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="ratio ratio-16x9 rounded overflow-hidden">
+                        <iframe src="https://drive.google.com/drive/folders/1EzSabPJudysDb21zEfCJJd8YHonifiVU?usp=drive_link/preview" allow="autoplay" allowfullscreen></iframe>
+                    </div>
+                    <p class="text-muted small mt-3 mb-0 text-center">Ini adalah salah satu contoh video intro yang tersedia di dalam folder.</p>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <footer class="text-center py-5 text-muted border-top mt-5">
         <p>&copy; 2026 Teknologi Rekayasa Elektro - Dokumen Penunjang</p>
