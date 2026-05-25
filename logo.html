@@ -59,7 +59,10 @@
         }
         .btn-kembali:hover { text-decoration: underline; }
         
-        /* Gaya khusus untuk item di dalam dropdown */
+        /* PERBAIKAN: Ditambahkan z-index agar tidak tertutup kotak di bawahnya */
+        .dropdown-menu { 
+            z-index: 1050 !important; 
+        }
         .dropdown-item:hover { 
             background-color: #eff6ff; 
             color: #1e3a8a; 
@@ -133,19 +136,19 @@
                                 </button>
                                 <ul class="dropdown-menu dropdown-menu-end shadow border-0" aria-labelledby="dropdownDownloadLogo">
                                     <li><h6 class="dropdown-header">Varian Banner (Landscape)</h6></li>
-                                    <li><a class="dropdown-item py-2 small" href="images/logos/Logo TRE Banner (colour).png" download><i class="bi bi-image me-2 text-primary"></i> Banner (Colour)</a></li>
-                                    <li><a class="dropdown-item py-2 small" href="images/logos/Logo TRE Banner (black).png" download><i class="bi bi-image me-2 text-dark"></i> Banner (Black)</a></li>
-                                    <li><a class="dropdown-item py-2 small" href="images/logos/Logo TRE Banner (white).png" download><i class="bi bi-image me-2 text-secondary"></i> Banner (White)</a></li>
-                                    <li><a class="dropdown-item py-2 small" href="images/logos/Logo TRE Banner (form).png" download><i class="bi bi-image me-2 text-info"></i> Banner (Form)</a></li>
+                                    <li><a class="dropdown-item py-2 small" href="images/logos/Logo TRE Banner (colour).png" download>Banner (Colour)</a></li>
+                                    <li><a class="dropdown-item py-2 small" href="images/logos/Logo TRE Banner (black).png" download>Banner (Black)</a></li>
+                                    <li><a class="dropdown-item py-2 small" href="images/logos/Logo TRE Banner (white).png" download>Banner (White)</a></li>
+                                    <li><a class="dropdown-item py-2 small" href="images/logos/Logo TRE Banner (form).png" download>Banner (Form)</a></li>
                                     
                                     <li><hr class="dropdown-divider"></li>
                                     
                                     <li><h6 class="dropdown-header">Varian Standar (Square/Box)</h6></li>
-                                    <li><a class="dropdown-item py-2 small" href="images/logos/LogoTRE (colour).png" download><i class="bi bi-box-seam me-2 text-primary"></i> Standar (Colour)</a></li>
-                                    <li><a class="dropdown-item py-2 small" href="images/logos/LogoTRE (black).png" download><i class="bi bi-box-seam me-2 text-dark"></i> Standar (Black)</a></li>
-                                    <li><a class="dropdown-item py-2 small" href="images/logos/LogoTRE (white).png" download><i class="bi bi-box-seam me-2 text-secondary"></i> Standar (White)</a></li>
-                                    <li><a class="dropdown-item py-2 small" href="images/logos/LogoTRE (black with name).png" download><i class="bi bi-file-text me-2 text-dark"></i> Standar (Black + Nama)</a></li>
-                                    <li><a class="dropdown-item py-2 small" href="images/logos/LogoTRE (white with name).png" download><i class="bi bi-file-text me-2 text-secondary"></i> Standar (White + Nama)</a></li>
+                                    <li><a class="dropdown-item py-2 small" href="images/logos/LogoTRE (colour).png" download>Standar (Colour)</a></li>
+                                    <li><a class="dropdown-item py-2 small" href="images/logos/LogoTRE (black).png" download>Standar (Black)</a></li>
+                                    <li><a class="dropdown-item py-2 small" href="images/logos/LogoTRE (white).png" download>Standar (White)</a></li>
+                                    <li><a class="dropdown-item py-2 small" href="images/logos/LogoTRE (black with name).png" download>Standar (Black + Nama)</a></li>
+                                    <li><a class="dropdown-item py-2 small" href="images/logos/LogoTRE (white with name).png" download>Standar (White + Nama)</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -189,7 +192,7 @@
                 <div class="card shadow-sm p-4">
                     <div class="card-body p-2 d-flex flex-column">
                         <div class="icon-circle"><i class="bi bi-file-earmark-easel text-primary fs-4"></i></div>
-                        <h4 class="fw-bold h5 mb-2">Template Presentasi (PPT)</h4>
+                        <h4 class="fw-bold h5 mb-2">Template PPT</h4>
                         <p class="text-muted small">Master slide PowerPoint resmi dengan skema warna dan tata letak khas institusi untuk presentasi akademik maupun umum.</p>
                         <a href="#" target="_blank" class="btn btn-outline-primary btn-sm mt-auto w-100 py-2"><i class="bi bi-box-arrow-up-right me-1"></i> Buka Folder PPT</a>
                     </div>
