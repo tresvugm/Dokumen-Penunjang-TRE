@@ -1,25 +1,28 @@
 ﻿<!DOCTYPE html>
 <html lang="id">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dokumen LaTeX - TRE</title>
-    
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
-    
+
     <style>
-        body { 
-            font-family: 'Inter', sans-serif; 
-            background-color: #f8f9fa; 
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8f9fa;
             margin: 0;
         }
-        .hero-section { 
-            background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%); 
-            color: white; 
-            padding: 60px 0; 
+
+        .hero-section {
+            background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+            color: white;
+            padding: 60px 0;
         }
+
         .section-title {
             color: #1e3a8a;
             border-bottom: 2px solid #dbeafe;
@@ -28,17 +31,20 @@
             margin-top: 40px;
             font-weight: 700;
         }
-        .card { 
-            border: none; 
-            transition: all 0.3s ease; 
-            border-radius: 12px; 
+
+        .card {
+            border: none;
+            transition: all 0.3s ease;
+            border-radius: 12px;
             height: 100%;
         }
-        .card:hover { 
-            transform: translateY(-5px); 
-            box-shadow: 0 10px 20px rgba(0,0,0,0.08); 
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
             border-left: 5px solid #1e3a8a;
         }
+
         .icon-circle {
             width: 50px;
             height: 50px;
@@ -49,6 +55,7 @@
             justify-content: center;
             margin-bottom: 15px;
         }
+
         .btn-kembali {
             color: #1e3a8a;
             text-decoration: none;
@@ -57,62 +64,82 @@
             margin-bottom: 20px;
             font-weight: 600;
         }
-        .btn-kembali:hover { text-decoration: underline; }
-        .dropdown-item:hover { background-color: #eff6ff; color: #1e3a8a; }
+
+        .btn-kembali:hover {
+            text-decoration: underline;
+        }
+
+        .dropdown-item:hover {
+            background-color: #eff6ff;
+            color: #1e3a8a;
+        }
     </style>
 </head>
+
 <body>
 
     <nav class="navbar navbar-expand-lg bg-white shadow-sm sticky-top" style="border-bottom: 3px solid #1e3a8a;">
         <div class="container">
             <a class="navbar-brand" href="https://tresvugm.github.io/">
-                <img src="images/Logo TRE Banner (Colour).png" alt="Logo TRE UGM" height="45" class="d-inline-block align-text-top">
+                <img src="images/Logo TRE Banner (Colour).png" alt="Logo TRE UGM" height="45"
+                    class="d-inline-block align-text-top">
             </a>
-            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarUtama">
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarUtama">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse justify-content-end" id="navbarUtama">
-                                                <ul class="navbar-nav">
+                <ul class="navbar-nav">
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle text-dark fw-semibold" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <a class="nav-link dropdown-toggle text-dark fw-semibold" href="#" id="navbarDropdown"
+                            role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             Layanan TRE
                         </a>
-                        <ul class="dropdown-menu dropdown-menu-end shadow-sm border-0 mt-2" aria-labelledby="navbarDropdown">
+                        <ul class="dropdown-menu dropdown-menu-end shadow-sm border-0 mt-2"
+                            aria-labelledby="navbarDropdown">
                             <li>
-                                <a class="dropdown-item d-flex align-items-center py-2" href="https://tresvugm.github.io/">
+                                <a class="dropdown-item d-flex align-items-center py-2"
+                                    href="https://tresvugm.github.io/">
                                     <i class="bi bi-house-door me-2 text-primary"></i> Beranda
                                 </a>
                             </li>
-                            <li><hr class="dropdown-divider"></li>
                             <li>
-                                <a class="dropdown-item d-flex align-items-center py-2" href="https://tresvugm.github.io/praktikum.html">
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li>
+                                <a class="dropdown-item d-flex align-items-center py-2"
+                                    href="https://tresvugm.github.io/praktikum.html">
                                     <i class="bi bi-journal-code me-2 text-primary"></i> Praktikum
                                 </a>
                             </li>
                             <li>
-                                <a class="dropdown-item d-flex align-items-center py-2" href="https://tresvugm.github.io/Magang-TRE/">
+                                <a class="dropdown-item d-flex align-items-center py-2"
+                                    href="https://tresvugm.github.io/Magang-TRE/">
                                     <i class="bi bi-briefcase me-2 text-primary"></i> Magang
                                 </a>
                             </li>
                             <li>
-                                <a class="dropdown-item d-flex align-items-center py-2" href="https://tresvugm.github.io/Tugas-Akhir-TRE/">
+                                <a class="dropdown-item d-flex align-items-center py-2"
+                                    href="https://tresvugm.github.io/Tugas-Akhir-TRE/">
                                     <i class="bi bi-mortarboard me-2 text-primary"></i> Tugas Akhir
                                 </a>
                             </li>
                             <li>
-                                <a class="dropdown-item d-flex align-items-center py-2" href="https://tresvugm.github.io/Prestasi-TRE/">
+                                <a class="dropdown-item d-flex align-items-center py-2"
+                                    href="https://tresvugm.github.io/Prestasi-TRE/">
                                     <i class="bi bi-trophy me-2 text-primary"></i> Prestasi
                                 </a>
                             </li>
                             <li>
-                                <a class="dropdown-item d-flex align-items-center py-2" href="https://tresvugm.github.io/Dokumen-Penunjang-TRE/">
+                                <a class="dropdown-item d-flex align-items-center py-2"
+                                    href="https://tresvugm.github.io/Dokumen-Penunjang-TRE/">
                                     <i class="bi bi-folder2-open me-2 text-primary"></i> Dokumen Penunjang
                                 </a>
                             </li>
                         </ul>
                     </li>
                 </ul>
-                    </li>
+                </li>
                 </ul>
             </div>
         </div>
@@ -135,18 +162,22 @@
                         <div class="icon-circle"><i class="bi bi-book text-primary fs-4"></i></div>
                         <h5 class="card-title fw-bold fs-6">Proposal PI/MI</h5>
                         <p class="card-text text-muted small">Template proposal Praktik Industri dan Magang Industri</p>
-                        <a href="http://ugm.id/LaTexProposalPIMI" target="_blank" class="btn btn-outline-primary btn-sm mt-auto w-100"><i class="bi bi-box-arrow-up-right me-1"></i> Buka Template</a>
+                        <a href="http://ugm.id/LaTexProposalPIMI" target="_blank"
+                            class="btn btn-outline-primary btn-sm mt-auto w-100"><i
+                                class="bi bi-box-arrow-up-right me-1"></i> Buka Template</a>
                     </div>
                 </div>
             </div>
-            
+
             <div class="col-md-3 col-sm-6">
                 <div class="card shadow-sm p-3">
                     <div class="card-body p-2 d-flex flex-column">
                         <div class="icon-circle"><i class="bi bi-patch-check text-primary fs-4"></i></div>
                         <h5 class="card-title fw-bold fs-6">Laporan PI</h5>
                         <p class="card-text text-muted small">Template laporan Praktik Industri</p>
-                        <a href="http://ugm.id/LaTexLaporanPI" target="_blank" class="btn btn-outline-primary btn-sm mt-auto w-100"><i class="bi bi-box-arrow-up-right me-1"></i> Buka Template</a>
+                        <a href="http://ugm.id/LaTexLaporanPI" target="_blank"
+                            class="btn btn-outline-primary btn-sm mt-auto w-100"><i
+                                class="bi bi-box-arrow-up-right me-1"></i> Buka Template</a>
                     </div>
                 </div>
             </div>
@@ -157,7 +188,9 @@
                         <div class="icon-circle"><i class="bi bi-file-earmark-slides text-primary fs-4"></i></div>
                         <h5 class="card-title fw-bold fs-6">Laporan MI</h5>
                         <p class="card-text text-muted small">Template laporan Magang Industri</p>
-                        <a href="http://ugm.id/LaTexLaporanMI" target="_blank" class="btn btn-outline-primary btn-sm mt-auto w-100"><i class="bi bi-box-arrow-up-right me-1"></i> Buka Template</a>
+                        <a href="http://ugm.id/LaTexLaporanMI" target="_blank"
+                            class="btn btn-outline-primary btn-sm mt-auto w-100"><i
+                                class="bi bi-box-arrow-up-right me-1"></i> Buka Template</a>
                     </div>
                 </div>
             </div>
@@ -171,7 +204,9 @@
                         <div class="icon-circle"><i class="bi bi-journal-text text-primary fs-4"></i></div>
                         <h5 class="card-title fw-bold fs-6">Proposal TA</h5>
                         <p class="card-text text-muted small">Format pengajuan proposal Tugas Akhir</p>
-                        <a href="http://ugm.id/LaTexProposalTA" target="_blank" class="btn btn-outline-primary btn-sm mt-auto w-100"><i class="bi bi-box-arrow-up-right me-1"></i> Buka Template</a>
+                        <a href="http://ugm.id/LaTexProposalTA" target="_blank"
+                            class="btn btn-outline-primary btn-sm mt-auto w-100"><i
+                                class="bi bi-box-arrow-up-right me-1"></i> Buka Template</a>
                     </div>
                 </div>
             </div>
@@ -182,19 +217,25 @@
                         <div class="icon-circle"><i class="bi bi-journal-check text-primary fs-4"></i></div>
                         <h5 class="card-title fw-bold fs-6">Laporan TA</h5>
                         <p class="card-text text-muted small">Template penyusunan laporan Tugas Akhir</p>
-                        <a href="http://ugm.id/LaTexLaporanTA" target="_blank" class="btn btn-outline-primary btn-sm mt-auto w-100"><i class="bi bi-box-arrow-up-right me-1"></i> Buka Template</a>
+                        <a href="http://ugm.id/LaTexLaporanTA" target="_blank"
+                            class="btn btn-outline-primary btn-sm mt-auto w-100"><i
+                                class="bi bi-box-arrow-up-right me-1"></i> Buka Template</a>
                     </div>
                 </div>
             </div>
         </div>
 
-                    <div class="col-md-4 col-sm-6">
+        <h3 class="section-title">Praktikum</h3>
+        <div class="row g-4 mb-4">
+            <div class="col-md-4 col-sm-6">
                 <div class="card shadow-sm p-3">
                     <div class="card-body p-2 d-flex flex-column">
                         <div class="icon-circle"><i class="bi bi-journal-check text-primary fs-4"></i></div>
                         <h5 class="card-title fw-bold fs-6">Laporan Praktikum</h5>
                         <p class="card-text text-muted small">Template penyusunan laporan Praktikum TRE</p>
-                        <a href="http://ugm.id/LaprakTRE" target="_blank" class="btn btn-outline-primary btn-sm mt-auto w-100"><i class="bi bi-box-arrow-up-right me-1"></i> Buka Template</a>
+                        <a href="http://ugm.id/LaprakTRE" target="_blank"
+                            class="btn btn-outline-primary btn-sm mt-auto w-100"><i
+                                class="bi bi-box-arrow-up-right me-1"></i> Buka Template</a>
                     </div>
                 </div>
             </div>
@@ -208,7 +249,9 @@
                         <div class="icon-circle"><i class="bi bi-newspaper text-primary fs-4"></i></div>
                         <h5 class="card-title fw-bold fs-6">Template Presentasi</h5>
                         <p class="card-text text-muted small">Template presentasi LaTeX</p>
-                        <a href="http://ugm.id/TemplatePresentationLaTeX" target="_blank" class="btn btn-outline-primary btn-sm mt-auto w-100"><i class="bi bi-box-arrow-up-right me-1"></i> Buka Template</a>
+                        <a href="http://ugm.id/TemplatePresentationLaTeX" target="_blank"
+                            class="btn btn-outline-primary btn-sm mt-auto w-100"><i
+                                class="bi bi-box-arrow-up-right me-1"></i> Buka Template</a>
                     </div>
                 </div>
             </div>
@@ -219,7 +262,9 @@
                         <div class="icon-circle"><i class="bi bi-journal-check text-primary fs-4"></i></div>
                         <h5 class="card-title fw-bold fs-6">Template Poster</h5>
                         <p class="card-text text-muted small">Template poster LaTeX</p>
-                        <a href="http://ugm.id/TemplatePosterLaTeX" target="_blank" class="btn btn-outline-primary btn-sm mt-auto w-100"><i class="bi bi-box-arrow-up-right me-1"></i> Buka Template</a>
+                        <a href="http://ugm.id/TemplatePosterLaTeX" target="_blank"
+                            class="btn btn-outline-primary btn-sm mt-auto w-100"><i
+                                class="bi bi-box-arrow-up-right me-1"></i> Buka Template</a>
                     </div>
                 </div>
             </div>
@@ -233,4 +278,5 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
+
 </html>
